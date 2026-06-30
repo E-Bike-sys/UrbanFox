@@ -1,0 +1,1264 @@
+/* ============================================================
+   ИМПОРТ ШРИФТОВ
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap');
+
+/* ============================================================
+   ПЕРЕМЕННЫЕ (СВЕТЛАЯ / ТЁМНАЯ ТЕМА)
+   ============================================================ */
+:root {
+    --bg-primary: #f0f4f9;
+    --bg-secondary: #ffffff;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f8faff;
+    --text-primary: #1a2634;
+    --text-secondary: #4a5f7a;
+    --text-muted: #6a7f9a;
+    --border-color: #e8edf5;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+    --shadow-hover: 0 16px 48px rgba(0, 119, 190, 0.08);
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --gradient: linear-gradient(135deg, #0077be, #5b3cc4);
+}
+
+[data-theme="dark"] {
+    --bg-primary: #0a0e17;
+    --bg-secondary: #111820;
+    --bg-card: #1a2430;
+    --bg-card-hover: #243040;
+    --text-primary: #e8edf5;
+    --text-secondary: #a0b4cc;
+    --text-muted: #6a7f9a;
+    --border-color: #2a3a5c;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 16px 48px rgba(0, 119, 190, 0.15);
+    --glass-bg: rgba(20, 26, 36, 0.8);
+    --glass-border: rgba(0, 212, 255, 0.15);
+}
+
+/* ============================================================
+   ОСНОВНЫЕ НАСТРОЙКИ
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================================
+   ОБЩИЕ ЗАГОЛОВКИ
+   ============================================================ */
+.section-title {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+}
+
+.section-title span {
+    background: linear-gradient(135deg, #0077be, #5b3cc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 17px;
+    margin-bottom: 45px;
+    font-weight: 400;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #0077be, #5b3cc4);
+    margin: 10px auto 0;
+    border-radius: 4px;
+}
+
+/* ============================================================
+   ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ
+   ============================================================ */
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 50%;
+    transition: all 0.3s;
+    color: var(--text-secondary);
+}
+
+.theme-toggle:hover {
+    transform: rotate(30deg);
+    color: #0077be;
+}
+
+/* ============================================================
+   ШАПКА (СТЕКЛЯННАЯ)
+   ============================================================ */
+header {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 14px 0;
+    border-bottom: 1px solid var(--glass-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* ============================================================
+   ЛОГОТИП
+   ============================================================ */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 26px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #0077be, #5b3cc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.5px;
+    transition: transform 0.3s;
+}
+
+.logo-img {
+    height: 35px;
+    width: auto;
+    display: inline-block;
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo-link:hover .logo {
+    transform: scale(1.03);
+}
+
+/* ============================================================
+   НАВИГАЦИЯ
+   ============================================================ */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    color: #0077be;
+    background: rgba(0, 119, 190, 0.06);
+}
+
+/* ============================================================
+   ГЛАВНЫЙ ЭКРАН (АНИМИРОВАННЫЙ ФОН)
+   ============================================================ */
+.hero {
+    text-align: center;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-primary);
+    transition: background 0.4s ease;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(ellipse at 20% 50%, rgba(0, 119, 190, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(91, 60, 196, 0.06) 0%, transparent 50%);
+    animation: heroBgFloat 12s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes heroBgFloat {
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    33% { transform: translate(2%, -2%) scale(1.05) rotate(1deg); }
+    66% { transform: translate(-2%, 2%) scale(0.95) rotate(-1deg); }
+    100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 56px;
+    font-weight: 900;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #0077be, #5b3cc4, #0077be);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 6s ease-in-out infinite;
+    letter-spacing: -1px;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero p {
+    font-size: 20px;
+    color: var(--text-secondary);
+    margin-bottom: 35px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(0, 119, 190, 0.08);
+    color: #0077be;
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 119, 190, 0.1);
+}
+
+/* ============================================================
+   КНОПКИ
+   ============================================================ */
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #0077be, #5b3cc4);
+    color: #fff;
+    padding: 16px 44px;
+    font-weight: 700;
+    font-size: 17px;
+    text-decoration: none;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 25px rgba(0, 119, 190, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 40px rgba(0, 119, 190, 0.4);
+}
+
+/* ============================================================
+   АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ
+   ============================================================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ============================================================
+   АДРЕСА (СТЕКЛЯННЫЕ КАРТОЧКИ)
+   ============================================================ */
+.addresses {
+    padding: 80px 0;
+    background: var(--bg-secondary);
+    transition: background 0.4s ease;
+}
+
+.address-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.address-card {
+    background: var(--bg-card);
+    padding: 32px 28px;
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: var(--shadow);
+}
+
+.address-card:hover {
+    transform: translateY(-10px);
+    border-color: #0077be;
+    box-shadow: var(--shadow-hover);
+}
+
+.address-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0077be;
+    margin-bottom: 12px;
+}
+
+.address-card p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.address-link {
+    text-decoration: none;
+    display: block;
+    border-radius: 12px;
+    padding: 6px 12px;
+    transition: background 0.3s;
+}
+
+.address-link:hover {
+    background: rgba(0, 119, 190, 0.05);
+}
+
+.address-link p {
+    color: var(--text-secondary);
+    transition: color 0.3s;
+}
+
+.address-link:hover p {
+    color: #0077be;
+    text-decoration: underline;
+}
+
+/* ============================================================
+   ПРАЙС-ЛИСТ — КОМПАКТНЫЙ
+   ============================================================ */
+.prices {
+    padding: 80px 0;
+    background: var(--bg-primary);
+    transition: background 0.4s ease;
+}
+
+.price-badge {
+    display: inline-block;
+    background: rgba(0, 119, 190, 0.08);
+    color: #0077be;
+    padding: 4px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    border: 1px solid rgba(0, 119, 190, 0.1);
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+}
+
+.price-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 12px 14px 10px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.price-card:hover {
+    transform: translateY(-2px);
+    border-color: #0077be;
+    box-shadow: var(--shadow-hover);
+}
+
+.price-card.highlight {
+    border-color: #0077be;
+    background: var(--bg-card-hover);
+}
+
+.price-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.price-icon-wrapper {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 119, 190, 0.06);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.price-icon {
+    font-size: 14px;
+}
+
+.price-card-header h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.price-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    flex: 1;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 0;
+    border-bottom: 1px dashed var(--border-color);
+    border-radius: 3px;
+    gap: 6px;
+}
+
+.price-item:last-child {
+    border-bottom: none;
+}
+
+.price-item:hover {
+    background: rgba(0, 119, 190, 0.03);
+    padding-left: 4px;
+    padding-right: 4px;
+    margin: 0 -2px;
+}
+
+.service-name {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.2;
+}
+
+.service-price {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0077be;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.price-card-footer {
+    margin-top: 6px;
+    padding-top: 5px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-tag {
+    font-size: 10px;
+    color: var(--text-muted);
+}
+
+.price-badge-small {
+    font-size: 9px;
+    font-weight: 600;
+    color: #e67e22;
+    background: rgba(230, 126, 34, 0.08);
+    padding: 1px 8px;
+    border-radius: 30px;
+}
+
+/* ============================================================
+   ФОРМА ЗАПИСИ
+   ============================================================ */
+.booking {
+    padding: 80px 0;
+    background: var(--bg-secondary);
+    transition: background 0.4s ease;
+}
+
+#bookingForm {
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+#bookingForm input,
+#bookingForm select {
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: 1.5px solid var(--border-color);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#bookingForm input:focus,
+#bookingForm select:focus {
+    border-color: #0077be;
+    box-shadow: 0 0 0 4px rgba(0, 119, 190, 0.06);
+}
+
+#bookingForm input::placeholder {
+    color: var(--text-muted);
+}
+
+#bookingForm .btn {
+    width: 100%;
+    margin-top: 4px;
+    padding: 15px 44px;
+}
+
+#bookingMessage {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #0077be;
+}
+
+/* ============================================================
+   КОНТАКТЫ
+   ============================================================ */
+.contacts {
+    padding: 80px 0;
+    background: var(--bg-primary);
+    text-align: center;
+    transition: background 0.4s ease;
+}
+
+.contacts h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #0077be, #5b3cc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.contacts p {
+    font-size: 17px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.contacts a {
+    color: #0077be;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contacts a:hover {
+    color: #5b3cc4;
+    text-decoration: underline;
+}
+
+/* ============================================================
+   ПОДВАЛ
+   ============================================================ */
+footer {
+    background: var(--bg-secondary);
+    padding: 28px 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    transition: background 0.4s ease;
+}
+
+footer p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* ============================================================
+   СТРАНИЦА АККУМУЛЯТОРОВ
+   ============================================================ */
+.batteries-page {
+    padding: 50px 0 80px;
+    background: var(--bg-primary);
+    transition: background 0.4s ease;
+}
+
+.batteries-page .battery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.batteries-page .battery-card {
+    background: var(--bg-card);
+    padding: 30px 28px;
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    transition: all 0.4s ease;
+    text-align: left;
+    box-shadow: var(--shadow);
+}
+
+.batteries-page .battery-card:hover {
+    transform: translateY(-8px);
+    border-color: #0077be;
+    box-shadow: var(--shadow-hover);
+}
+
+.batteries-page .battery-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 14px 0 18px;
+}
+
+.batteries-page .battery-card ul li {
+    color: var(--text-secondary);
+    font-size: 14px;
+    padding: 4px 0;
+    padding-left: 22px;
+    position: relative;
+}
+
+.batteries-page .battery-card ul li::before {
+    content: "✦";
+    color: #0077be;
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+}
+
+.battery-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.batteries-page .battery-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.batteries-page .battery-card p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.batteries-page .battery-card .price {
+    display: inline-block;
+    background: linear-gradient(135deg, #0077be, #5b3cc4);
+    color: #fff;
+    padding: 6px 24px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+/* ============================================================
+   КОМПАКТНЫЕ КАРТОЧКИ (АККУМУЛЯТОРЫ)
+   ============================================================ */
+.battery-card.compact {
+    text-align: center;
+}
+
+.battery-card.compact p {
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+.compact-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.compact-tags span {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    padding: 4px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+}
+
+/* ============================================================
+   КОНСТРУКТОР АКБ
+   ============================================================ */
+.constructor-card {
+    text-align: center !important;
+}
+
+.constructor-full {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.constructor-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.constructor-group label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.constructor-group select {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1.5px solid var(--border-color);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.constructor-group select:focus {
+    border-color: #0077be;
+    box-shadow: 0 0 0 4px rgba(0, 119, 190, 0.06);
+}
+
+.constructor-result {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 16px 0;
+    padding: 18px 24px;
+    background: rgba(0, 119, 190, 0.04);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.constructor-price {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0077be;
+}
+
+.constructor-price span {
+    font-size: 28px;
+}
+
+.constructor-btn {
+    display: inline-block !important;
+    padding: 12px 36px !important;
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ (АККУМУЛЯТОРЫ)
+   ============================================================ */
+.constructor-info {
+    margin-top: 14px;
+}
+
+.constructor-info details {
+    margin-bottom: 8px;
+    background: var(--bg-card);
+    border-radius: 14px;
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.constructor-info details:hover {
+    border-color: #0077be;
+}
+
+.constructor-info details summary {
+    color: #0077be;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 6px 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.constructor-info details summary::-webkit-details-marker {
+    display: none;
+}
+
+.constructor-info details summary::after {
+    content: '▼';
+    margin-left: auto;
+    font-size: 12px;
+    transition: transform 0.3s;
+    color: var(--text-muted);
+}
+
+.constructor-info details[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.info-content {
+    padding: 12px 8px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.info-content ul {
+    padding-left: 20px;
+    margin: 6px 0 12px;
+}
+
+.info-content ul li {
+    color: var(--text-secondary);
+    font-size: 13px;
+    padding: 2px 0;
+}
+
+.info-content p {
+    margin-top: 8px;
+    color: var(--text-primary);
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 8px 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.compare-table th {
+    background: linear-gradient(135deg, #0077be, #5b3cc4);
+    color: #fff;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 700;
+}
+
+.compare-table td {
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.compare-table tr:hover td {
+    background: rgba(0, 119, 190, 0.04);
+}
+
+/* ============================================================
+   КНОПКА "НАВЕРХ"
+   ============================================================ */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #0077be, #5b3cc4);
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 119, 190, 0.3);
+    z-index: 999;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 119, 190, 0.4);
+}
+
+/* ============================================================
+   АДАПТИВ
+   ============================================================ */
+@media (max-width: 700px) {
+    header .container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav a {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 80px 0 60px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .address-grid,
+    .battery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .batteries-page .battery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .price-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .price-card {
+        padding: 10px 12px 8px;
+    }
+
+    .price-card-header h3 {
+        font-size: 12px;
+    }
+
+    .service-name {
+        font-size: 11px;
+    }
+
+    .service-price {
+        font-size: 11px;
+    }
+
+    .price-icon-wrapper {
+        width: 24px;
+        height: 24px;
+    }
+
+    .price-icon {
+        font-size: 12px;
+    }
+
+    .contacts h2 {
+        font-size: 28px;
+    }
+
+    .constructor-row {
+        grid-template-columns: 1fr;
+    }
+
+    .constructor-result {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .constructor-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .constructor-price {
+        font-size: 20px;
+    }
+
+    .constructor-price span {
+        font-size: 24px;
+    }
+
+    .logo-img {
+        height: 28px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .scroll-top {
+        bottom: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+
+    #bookingForm {
+        gap: 12px;
+    }
+
+    #bookingForm input,
+    #bookingForm select {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    .price-card-footer {
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-start;
+    }
+}
+/* ============================================================
+   АДАПТИВНЫЕ КАРТОЧКИ ПРАЙС-ЛИСТА (ПО ВЫСОТЕ)
+   ============================================================ */
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    align-items: start;
+}
+
+.price-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 12px 14px 10px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 120px;
+}
+
+.price-card:hover {
+    transform: translateY(-2px);
+    border-color: #0077be;
+    box-shadow: var(--shadow-hover);
+}
+
+.price-card.highlight {
+    border-color: #0077be;
+    background: var(--bg-card-hover);
+}
+
+.price-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.price-icon-wrapper {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 119, 190, 0.06);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.price-icon {
+    font-size: 14px;
+}
+
+.price-card-header h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.price-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    flex: 1;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 0;
+    border-bottom: 1px dashed var(--border-color);
+    border-radius: 3px;
+    gap: 6px;
+}
+
+.price-item:last-child {
+    border-bottom: none;
+}
+
+.price-item:hover {
+    background: rgba(0, 119, 190, 0.03);
+    padding-left: 4px;
+    padding-right: 4px;
+    margin: 0 -2px;
+}
+
+.service-name {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.2;
+}
+
+.service-price {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0077be;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.price-card-footer {
+    margin-top: 6px;
+    padding-top: 5px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.price-tag {
+    font-size: 10px;
+    color: var(--text-muted);
+}
+
+.price-badge-small {
+    font-size: 9px;
+    font-weight: 600;
+    color: #e67e22;
+    background: rgba(230, 126, 34, 0.08);
+    padding: 1px 8px;
+    border-radius: 30px;
+}
+
+/* Карточки с большим количеством услуг */
+.price-card .price-items {
+    max-height: none;
+}
+
+/* Адаптив */
+@media (max-width: 700px) {
+    .price-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .price-card {
+        padding: 10px 12px 8px;
+        min-height: 100px;
+    }
+
+    .price-card-header h3 {
+        font-size: 12px;
+    }
+
+    .service-name {
+        font-size: 11px;
+    }
+
+    .service-price {
+        font-size: 11px;
+    }
+
+    .price-icon-wrapper {
+        width: 24px;
+        height: 24px;
+    }
+
+    .price-icon {
+        font-size: 12px;
+    }
+
+    .price-card-footer {
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-start;
+    }
+}

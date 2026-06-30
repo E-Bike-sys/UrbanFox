@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Аккумуляторы для электровелосипедов — UrbanFox</title>
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ШАПКА -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo-link" id="mainLogo">
+                <div class="logo">
+                    <img src="logo.png" alt="UrbanFox" class="logo-img" />
+                    UrbanFox
+                </div>
+            </a>
+            <nav>
+                <a href="batteries.html" style="color: #0077be; font-weight: 600;">Аккумуляторы</a>
+                <a href="index.html#prices">Цены</a>
+                <a href="index.html#booking">Запись</a>
+                <a href="index.html#contacts">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <section class="hero" style="padding: 60px 0 40px;">
+        <div class="container">
+            <h1 style="font-size: 38px;">Аккумуляторы для электровелосипедов</h1>
+            <p style="font-size: 17px;">Диагностика, ремонт, замена ячеек и сборка новых батарей</p>
+        </div>
+    </section>
+
+    <!-- УСЛУГИ ПО АККУМУЛЯТОРАМ -->
+    <section class="batteries-page">
+        <div class="container">
+            <div class="battery-grid">
+
+                <!-- Диагностика -->
+                <div class="battery-card">
+                    <div class="battery-icon">🔍</div>
+                    <h3>Диагностика</h3>
+                    <p>Полная проверка состояния аккумулятора:</p>
+                    <ul>
+                        <li>Измерение ёмкости</li>
+                        <li>Проверка баланса ячеек</li>
+                        <li>Тестирование BMS</li>
+                        <li>Выявление неисправных элементов</li>
+                    </ul>
+                    <span class="price">1 300 ₽</span>
+                </div>
+
+                <!-- Балансировка -->
+                <div class="battery-card">
+                    <div class="battery-icon">⚖️</div>
+                    <h3>Балансировка</h3>
+                    <p>Выравнивание напряжения всех ячеек:</p>
+                    <ul>
+                        <li>Пассивная балансировка</li>
+                        <li>Активная балансировка</li>
+                        <li>Восстановление ёмкости</li>
+                        <li>Продление срока службы</li>
+                    </ul>
+                    <span class="price">1 800 ₽</span>
+                </div>
+
+                <!-- Замена ячеек -->
+                <div class="battery-card">
+                    <div class="battery-icon">🔄</div>
+                    <h3>Замена ячеек</h3>
+                    <p>Замена старых или повреждённых элементов:</p>
+                    <ul>
+                        <li>Подбор новых ячеек</li>
+                        <li>Сварка и сборка</li>
+                        <li>Установка новой BMS</li>
+                        <li>Тестирование готовой батареи</li>
+                    </ul>
+                    <span class="price">от 3 300 ₽</span>
+                </div>
+
+                <!-- КОНСТРУКТОР СБОРКИ АКБ -->
+                <div class="battery-card constructor-card" style="grid-column: span 2; max-width: 100%;">
+                    <div class="battery-icon">🔧</div>
+                    <h3>Сборка АКБ</h3>
+                    <p style="text-align: center;">Изготовление новой батареи под ваш заказ</p>
+                    
+                    <div class="constructor-full">
+                        <div class="constructor-row">
+                            <div class="constructor-group">
+                                <label>Напряжение:</label>
+                                <select id="batteryVoltage">
+                                    <option value="12">12V</option>
+                                    <option value="24">24V</option>
+                                    <option value="36">36V</option>
+                                    <option value="48" selected>48V</option>
+                                    <option value="60">60V</option>
+                                    <option value="72">72V</option>
+                                </select>
+                            </div>
+                            
+                            <div class="constructor-group">
+                                <label>Ёмкость (Ah):</label>
+                                <select id="batteryCapacity">
+                                    <option value="10">10 Ah</option>
+                                    <option value="15">15 Ah</option>
+                                    <option value="20">20 Ah</option>
+                                    <option value="25">25 Ah</option>
+                                    <option value="30">30 Ah</option>
+                                    <option value="40">40 Ah</option>
+                                    <option value="50" selected>50 Ah</option>
+                                    <option value="60">60 Ah</option>
+                                    <option value="70">70 Ah</option>
+                                    <option value="80">80 Ah</option>
+                                    <option value="90">90 Ah</option>
+                                    <option value="100">100 Ah</option>
+                                    <option value="120">120 Ah</option>
+                                    <option value="150">150 Ah</option>
+                                </select>
+                            </div>
+                            
+                            <div class="constructor-group">
+                                <label>Тип ячеек:</label>
+                                <select id="batteryType">
+                                    <option value="liion" selected>Li-ion (Литий-ион)</option>
+                                    <option value="lifepo4">LiFePO4 (Железо-фосфат)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="constructor-row">
+                            <div class="constructor-group" style="flex: 2;">
+                                <label>Установка смарт BMS:</label>
+                                <select id="batteryBMS">
+                                    <option value="none">Без BMS (только сборка)</option>
+                                    <option value="huayang" selected>Бюджет (Хуаянг) +2 000 ₽</option>
+                                    <option value="premium">Премиум (ANT / Jikong) +5 000 ₽</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="constructor-result">
+                            <div class="constructor-price">
+                                Итого: <span id="batteryPrice">57 000</span> ₽
+                            </div>
+                            <a href="index.html#booking" class="btn constructor-btn" id="orderBatteryBtn">Заказать сборку</a>
+                        </div>
+
+                        <div class="constructor-info">
+                            <details>
+                                <summary>📖 Какие ячейки используются?</summary>
+                                <div class="info-content">
+                                    <p><strong>Li-ion:</strong></p>
+                                    <ul>
+                                        <li>До 1500 Вт — высокотоковые Eve 21700 или 18650</li>
+                                        <li>1500-4000 Вт — Lishen, Eve, Samsung (меньшей ёмкости, с большим током)</li>
+                                        <li>3000+ Вт — пакеты 30-150 Ач с током разряда 300+ А</li>
+                                    </ul>
+                                    <p><strong>LiFePO4:</strong></p>
+                                    <ul>
+                                        <li>Ячейки 32140 по 15 Ач каждая</li>
+                                        <li>Пакеты Eve 50, 100, 150 Ач</li>
+                                    </ul>
+                                    <p><strong>Метод сборки:</strong> Точечная сварка никелевой или медной лентой (0,15–0,4 мм)</p>
+                                </div>
+                            </details>
+
+                            <details>
+                                <summary>⚖️ Как выбрать химию?</summary>
+                                <div class="info-content">
+                                    <table class="compare-table">
+                                        <tr><th>Критерий</th><th>Li-ion</th><th>LiFePO4</th></tr>
+                                        <tr><td>Безопасность</td><td>⚠️ Горючий</td><td>✅ Безопасен</td></tr>
+                                        <tr><td>Долгосрочность</td><td>~1000 циклов</td><td>✅ 2000+ циклов</td></tr>
+                                        <tr><td>Ёмкость на объём</td><td>✅ Лучше</td><td>На 10-15% больше места</td></tr>
+                                        <tr><td>Работа в мороз</td><td>-0°C…+50°C</td><td>✅ -20°C…+60°C</td></tr>
+                                        <tr><td>Мощность</td><td>✅ Выше</td><td>Ниже</td></tr>
+                                        <tr><td>Скорость зарядки</td><td>Стандарт</td><td>✅ Быстрее</td></tr>
+                                        <tr><td>Диапазон напряжения</td><td>3.2V – 4.25V</td><td>2.9V – 3.65V</td></tr>
+                                    </table>
+                                    <p style="margin-top: 10px; font-size: 13px; color: #4a5f7a;">
+                                        ⚡ LiFePO4 нельзя отследить % заряда по напряжению — только через умную BMS
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Защита от холода -->
+                <div class="battery-card compact">
+                    <div class="battery-icon">🧊</div>
+                    <h3>Защита от холода</h3>
+                    <p>Утепление аккумулятора для зимы</p>
+                    <div class="compact-tags">
+                        <span>Термоизоляция</span>
+                        <span>Подогрев</span>
+                        <span>Сохранение ёмкости</span>
+                        <span>Увеличение ресурса</span>
+                    </div>
+                    <span class="price">от 2 300 ₽</span>
+                </div>
+
+                <!-- Герметизация -->
+                <div class="battery-card compact">
+                    <div class="battery-icon">📦</div>
+                    <h3>Герметизация</h3>
+                    <p>Влагозащита и пылезащита</p>
+                    <div class="compact-tags">
+                        <span>Герметизация корпуса</span>
+                        <span>Влагозащита BMS</span>
+                        <span>Пылезащита контактов</span>
+                        <span>Проверка герметичности</span>
+                    </div>
+                    <span class="price">от 1 800 ₽</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section id="contacts" class="contacts">
+        <div class="container">
+            <h2>Контакты</h2>
+            <p>📍 Ново-Астраханское шоссе, 81/5к</p>
+            <p>📞 <a href="tel:+79179881205">+7 (917) 988-12-05</a></p>
+            <p>📍 Первый Овражный проезд, 2б</p>
+            <p>📞 <a href="tel:+79878081266">+7 (987) 808-12-66</a></p>
+            <p>⏰ Пн–Сб: 12:00 – 21:00</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 UrbanFox</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

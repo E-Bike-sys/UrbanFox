@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UrbanFox — Мастерская электровелосипедов</title>
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ШАПКА -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo-link" id="mainLogo">
+                <div class="logo">
+                    <img src="logo.png" alt="UrbanFox" class="logo-img" />
+                    UrbanFox
+                </div>
+            </a>
+            <nav>
+                <a href="batteries.html">Аккумуляторы</a>
+                <a href="#prices">Цены</a>
+                <a href="#booking">Запись</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <section class="hero">
+        <div class="container">
+            <h1>Ремонт электровелосипедов</h1>
+            <p>Диагностика, контроллеры, аккумуляторы — любой сложности</p>
+            <a href="#booking" class="btn">Записаться на диагностику</a>
+        </div>
+    </section>
+
+    <!-- АДРЕСА МАСТЕРСКИХ -->
+    <section id="addresses" class="addresses">
+        <div class="container">
+            <h2 class="section-title">Наши <span>мастерские</span></h2>
+            <p class="section-subtitle">Две удобные локации для вашего обслуживания</p>
+            <div class="address-grid">
+                <div class="address-card">
+                    <h3>📍 Мастерская на Ново-Астраханском</h3>
+                    <a href="https://yandex.ru/maps/?text=Саратов, Ново-Астраханское шоссе, 81/5к" target="_blank" class="address-link">
+                        <p>Ново-Астраханское шоссе, 81/5к</p>
+                    </a>
+                    <p>⏰ Пн–Сб: 12:00 – 21:00</p>
+                    <p>📞 <a href="tel:+79179881205">+7 (917) 988-12-05</a></p>
+                </div>
+                <div class="address-card">
+                    <h3>📍 Мастерская на Овражном</h3>
+                    <a href="https://yandex.ru/maps/?text=Саратов, Первый Овражный проезд, 2б" target="_blank" class="address-link">
+                        <p>Первый Овражный проезд, 2б</p>
+                    </a>
+                    <p>⏰ Пн–Сб: 12:00 – 21:00</p>
+                    <p>📞 <a href="tel:+79878081266">+7 (987) 808-12-66</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПРАЙС-ЛИСТ -->
+    <section id="prices" class="prices">
+        <div class="container">
+            <div class="price-header">
+                <h2 class="section-title">Прайс-<span>лист</span></h2>
+                <p class="section-subtitle">Все цены указаны за работу без учёта стоимости запчастей</p>
+            </div>
+
+            <div class="price-grid">
+                <!-- 1. Диагностика -->
+                <div class="price-card">
+                    <div class="price-card-header">
+                        <div class="price-icon-wrapper">
+                            <span class="price-icon">🔬</span>
+                        </div>
+                        <h3>Диагностика и общие работы</h3>
+                    </div>
+                    <div class="price-items">
+                        <div class="price-item">
+                            <span class="service-name">Диагностика</span>
+                            <span class="service-price">от 1 300 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Сборка самокатов</span>
+                            <span class="service-price">от 2 000 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Сборка электро-вело</span>
+                            <span class="service-price">от 5 000 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Пайка проводов</span>
+                            <span class="service-price">от 500 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Замер ёмкости АКБ</span>
+                            <span class="service-price">2 000 ₽</span>
+                        </div>
+                    </div>
+                    <div class="price-card-footer">
+                        <span class="price-tag">5 услуг</span>
+                    </div>
+                </div>
+
+                <!-- 2. Колёса -->
+                <div class="price-card">
+                    <div class="price-card-header">
+                        <div class="price-icon-wrapper">
+                            <span class="price-icon">🛞</span>
+                        </div>
+                        <h3>Колёса и шиномонтаж</h3>
+                    </div>
+                    <div class="price-items">
+                        <div class="price-item">
+                            <span class="service-name">Шиномонтаж (переднее колесо)</span>
+                            <span class="service-price">1 000 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Шиномонтаж (мотор-колесо)</span>
+                            <span class="service-price">1 500 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Шиповка покрышки (за 1 шип)</span>
+                            <span class="service-price">15 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Ремонт прокола жгутом</span>
+                            <span class="service-price">400 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Залитие антипрокола</span>
+                            <span class="service-price">800 ₽</span>
+                        </div>
+                    </div>
+                    <div class="price-card-footer">
+                        <span class="price-tag">5 услуг</span>
+                    </div>
+                </div>
+
+                <!-- 3. Тормоза -->
+                <div class="price-card highlight">
+                    <div class="price-card-header">
+                        <div class="price-icon-wrapper">
+                            <span class="price-icon">🛑</span>
+                        </div>
+                        <h3>Тормозная система</h3>
+                    </div>
+                    <div class="price-items">
+                        <div class="price-item">
+                            <span class="service-name">Очистка поршня суппорта</span>
+                            <span class="service-price">1 300 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Замена ручки/суппорта (с прокачкой)</span>
+                            <span class="service-price">1 300 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Прокачка тормоза</span>
+                            <span class="service-price">600 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Замена колодок</span>
+                            <span class="service-price">350 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Замена тормозных дисков</span>
+                            <span class="service-price">500 ₽</span>
+                        </div>
+                    </div>
+                    <div class="price-card-footer">
+                        <span class="price-tag">5 услуг</span>
+                        <span class="price-badge-small">🔥 Популярное</span>
+                    </div>
+                </div>
+
+                <!-- 4. Электрика -->
+                <div class="price-card">
+                    <div class="price-card-header">
+                        <div class="price-icon-wrapper">
+                            <span class="price-icon">⚡</span>
+                        </div>
+                        <h3>Электрика и электроника</h3>
+                    </div>
+                    <div class="price-items">
+                        <div class="price-item">
+                            <span class="service-name">Замена датчиков холла (МК)</span>
+                            <span class="service-price">3 100 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Замена датчика холла (РГ)</span>
+                            <span class="service-price">800 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Замена контроллера на такой же</span>
+                            <span class="service-price">1 000 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Замена контроллера аналог (обычный)</span>
+                            <span class="service-price">2 000 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Замена контроллера (Sport)</span>
+                            <span class="service-price">5 000 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Замена контроллера Votol, Fardriver, Vesc</span>
+                            <span class="service-price">5 000 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Настройка Votol, Fardriver, Vesc</span>
+                            <span class="service-price">4 500 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Замена разъёма</span>
+                            <span class="service-price">500 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Замена провода З/У</span>
+                            <span class="service-price">950 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Замена провода МК</span>
+                            <span class="service-price">3 150 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Замена электронных компонентов</span>
+                            <span class="service-price">800-2 300 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Замена BMS</span>
+                            <span class="service-price">2 300 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Установка сигнализации</span>
+                            <span class="service-price">1 300-1 500 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Установка и подключение фары</span>
+                            <span class="service-price">500-2 500 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Установка GPS трекера</span>
+                            <span class="service-price">5 300 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Установка подогрева</span>
+                            <span class="service-price">2 300 ₽</span>
+                        </div>
+                    </div>
+                    <div class="price-card-footer">
+                        <span class="price-tag">17 услуг</span>
+                    </div>
+                </div>
+
+                <!-- 5. Механика -->
+                <div class="price-card">
+                    <div class="price-card-header">
+                        <div class="price-icon-wrapper">
+                            <span class="price-icon">🔩</span>
+                        </div>
+                        <h3>Механика и подшипники</h3>
+                    </div>
+                    <div class="price-items">
+                        <div class="price-item">
+                            <span class="service-name">Замена подшипников МК</span>
+                            <span class="service-price">2 800 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Замена рулевого подшипника</span>
+                            <span class="service-price">2 150 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Замена стопорных шайб</span>
+                            <span class="service-price">1 000 ₽</span>
+                        </div>
+                    </div>
+                    <div class="price-card-footer">
+                        <span class="price-tag">3 услуги</span>
+                    </div>
+                </div>
+
+                <!-- 6. Гидроизоляция -->
+                <div class="price-card">
+                    <div class="price-card-header">
+                        <div class="price-icon-wrapper">
+                            <span class="price-icon">💧</span>
+                        </div>
+                        <h3>Гидроизоляция</h3>
+                    </div>
+                    <div class="price-items">
+                        <div class="price-item">
+                            <span class="service-name">Гидроизоляция МК</span>
+                            <span class="service-price">1 800-2 300 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Гидроизоляция контроллера</span>
+                            <span class="service-price">1 500 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Гидроизоляция деки</span>
+                            <span class="service-price">1 300 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Гидроизоляция дисплея</span>
+                            <span class="service-price">1 100 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Упаковка АКБ в термоусадку</span>
+                            <span class="service-price">1 300 ₽</span>
+                        </div>
+                    </div>
+                    <div class="price-card-footer">
+                        <span class="price-tag">5 услуг</span>
+                    </div>
+                </div>
+
+                <!-- 7. Выезд -->
+                <div class="price-card">
+                    <div class="price-card-header">
+                        <div class="price-icon-wrapper">
+                            <span class="price-icon">🚗</span>
+                        </div>
+                        <h3>Выезд и буксировка</h3>
+                    </div>
+                    <div class="price-items">
+                        <div class="price-item">
+                            <span class="service-name">Выезд по городу</span>
+                            <span class="service-price">от 700 ₽</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Буксир до мастерской</span>
+                            <span class="service-price">800-1 300 ₽</span>
+                        </div>
+                    </div>
+                    <div class="price-card-footer">
+                        <span class="price-tag">2 услуги</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ФОРМА ЗАПИСИ -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <h2 class="section-title">Записаться на <span>ремонт</span></h2>
+            <p class="section-subtitle">Заполните форму, и мы свяжемся с вами в ближайшее время</p>
+            
+            <form id="bookingForm">
+                <input type="text" id="clientName" placeholder="Ваше имя" required />
+                <input type="tel" id="clientPhone" placeholder="Телефон" required />
+                
+                <select id="clientWorkshop" required>
+                    <option value="">Выберите мастерскую</option>
+                    <option value="Ново-Астраханское">Ново-Астраханское шоссе, 81/5к</option>
+                    <option value="Овражный">Первый Овражный проезд, 2б</option>
+                </select>
+                
+                <input type="date" id="clientDate" required />
+                <input type="time" id="clientTime" required />
+                
+                <!-- Скрытые поля для параметров АКБ -->
+                <input type="hidden" id="batteryVoltageHidden" value="" />
+                <input type="hidden" id="batteryCapacityHidden" value="" />
+                <input type="hidden" id="batteryTypeHidden" value="" />
+                <input type="hidden" id="batteryBMSHidden" value="" />
+                <input type="hidden" id="batteryPriceHidden" value="" />
+                
+                <button type="submit" class="btn">Записаться</button>
+            </form>
+            <div id="bookingMessage"></div>
+        </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section id="contacts" class="contacts">
+        <div class="container">
+            <h2>Контакты</h2>
+            <p>📍 Ново-Астраханское шоссе, 81/5к</p>
+            <p>📞 <a href="tel:+79179881205">+7 (917) 988-12-05</a></p>
+            <p>📍 Первый Овражный проезд, 2б</p>
+            <p>📞 <a href="tel:+79878081266">+7 (987) 808-12-66</a></p>
+            <p>⏰ Пн–Сб: 12:00 – 21:00</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 UrbanFox</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
